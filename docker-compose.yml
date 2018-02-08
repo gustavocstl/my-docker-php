@@ -1,0 +1,37 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    working_dir: /var/www/html
+    volumes:
+      - ../application/:/var/www/html
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+     - "80:80"
+    depends_on:
+      - php
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=default
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=secret
+    ports:
+      - "4306:3306"
+    volumes:
+      - "./data/db/mysql:/var/lib/mysql"
+
+  php:
+    build: ./php-fpm71
+    container_name: php
+    restart: always
+    volumes:
+      - ../application/:/var/www/html
+      - ./php-fpm71/php.ini:/usr/local/etc/php/conf.d/php.ini
