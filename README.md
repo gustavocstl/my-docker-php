@@ -24,6 +24,17 @@
 
 ---
 
+## Using
+
+You need docker-compose installed to run. Execute the commands below:
+
+```sh
+$ docker-compose build nginx mysql php
+$ docker-compose up -d nginx mysql
+```
+
+Finally open http://localhost/ and see everything working! 👍
+
 ## Folder tree
 
 The folder organization of your project should look like this:
