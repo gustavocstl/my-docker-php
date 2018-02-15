@@ -4,7 +4,7 @@ RUN apt-get update \
   && docker-php-ext-install pdo_mysql mysqli mbstring
 
 RUN apt-get update \
-  && apt-get install -y git curl openssh-client \
+  && apt-get install -y git curl openssh-client zip unzip \
   && pecl install xdebug \
   && docker-php-ext-enable xdebug \
   && docker-php-source delete \
