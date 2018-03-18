@@ -9,6 +9,7 @@
 - Composer
 - Git
 - Curl
+- Redis
 
 ### Libs enabled with PHP
 - tokenizer
@@ -16,6 +17,7 @@
 - mbstring
 - xdebug
 - libxml
+- pcntl
 
 ### Ports configuration
 
@@ -23,6 +25,7 @@
 |------------|------|
 | Nginx      | 80   |
 | MySQL      | 4306 |
+| Redis      | 6379 |
 
 ---
 
@@ -31,8 +34,8 @@
 You need docker-compose installed to run. Execute the commands below:
 
 ```sh
-$ docker-compose build nginx mysql php
-$ docker-compose up -d nginx mysql
+$ docker-compose build nginx mysql php redis
+$ docker-compose up -d nginx mysql redis
 ```
 
 Finally open http://localhost/ and see everything working! 👍
@@ -40,6 +43,7 @@ Finally open http://localhost/ and see everything working! 👍
 ## Folder tree
 
 The folder organization of your project should look like this:
+*You can change this if you want* 
 
 ```sh
 .
