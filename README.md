@@ -1,6 +1,6 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# Docker PHP, MySQL, Nginx and Xdebug
+# Docker running PHP-FPM, Nginx, MySQL, Redis and Xdebug enabled
 
 ## This docker contains
 - Nginx
